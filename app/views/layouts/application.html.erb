@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EmployeeReport</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% flash.each do |name, messages| %>
+      <div class="alert alert-<%= name %>">
+
+      <ul>
+      <% messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<%= form_with url: { controller: "employees", action: "import" }, html: { multipart: true } do |f| %>
+  <%= label_tag :excel_file, "Select an Excel File: " %>
+  <%= f.file_field :excel_file, id: :excel_file, accept: ".xlsx", required: true %>
+  <%= f.submit 'Import' %>
+<% end %>

@@ -1,0 +1,19 @@
+<%= render 'import_file_form' %>
+<br><br>
+<%= link_to 'Export CSV', export_path(format: 'csv') %>
+<%= link_to 'Export JSON', export_path(format: 'json') %>
+
+
+<h2>Graphs</h2>
+
+
+<h1>Employee Count <%= Employee::STATES.join(' Vs ') %></h1>
+
+<h4>Column Chart Stacked</h4>
+<%= column_chart @employee_chart_data, stacked: true %>
+
+<h4>Bar Chart</h4>
+<%= bar_chart @employee_chart_data, stacked: true %>
+
+<h4>Column Chart</h4>
+<%= column_chart @employee_chart_data %>
